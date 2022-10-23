@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Auth0 Demo Home</title>  <!-- Name of page on tab -->
+  </head>
+  <body>
+    <img src="https://media.tenor.com/zPz6pCUuN2cAAAAM/peach-cat-and-goma-cat-wave.gif" alt="Hello Cat">
+    <!-- 
+      If user is logged in, home page will say 'Welcome <User's Name>', display link to log out,
+      and info about the user
+    -->
+    {% if session %}
+    <h1>Welcome {{session.userinfo.name}}!</h1>
+    <p><a href="/comic" id="qsComicBtn">See a Strange Planet Comic</a></p>
+    <p><a href="/logout" id="qsLogoutBtn">Logout</a></p>
+    
+    <p> The Session Information: </p>
+    <div><pre>{{pretty}}</pre></div>
+    <!-- <p> Calendar Information: </p>
+    <div><pre>{{calendar}}</pre></div> -->
+
+    <!-- If user has not logged in, home page will say 'Welcome Guest' and display link to log in-->
+    {% else %}
+    <h1 id="profileDropDown">Welcome Guest</h1>
+    <p><a href="/login" id="qsLoginBtn">Login</a></p>
+    {% endif %}
+  </body>
+</html>
