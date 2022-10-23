@@ -4,29 +4,39 @@ This sample demonstrates how to create a simple Python web app that shows comics
 authenticated users
 
 # Set-up
-1. Clone this git repository and navigate into it
+1. Make sure you have `python3` and `pip` installed
+2. Run `pip install -r requirements.txt` to install the dependencies
+3. Clone this git repository and navigate into it
 ```
-    
+    git clone https://github.com/hndo1220/auth0-techtalk-python-flask-demo.git
+    cd auth0-techtalk-python-flask-demo
 ```
-2. Create an account
+4. Create an account
     * Go to [Auth0](https://auth0.com) and click Sign Up.
     * Use Google, GitHub or Microsoft Account to login.
-3. 
+
+5. Register and configure the Web App on Auth0
+    * Navigate to your Auth0 Dashboard
+    * Click Create Application
+    * Set Application Name (ex: 'Auth0 Tech Talk Python Flask Demo')
+    * Select Application type = 'Regular Web Applications'
+    * Click on the 'Settings' tab
+    * Note your Domain, Client ID and Client Secret
+    * Copy `http://localhost:3000/callback` into the `Allowed Callback URLs` textbox
+    * Copy `http://localhost:3000` into the `Allowed Logout URLs` textbox
+
+6. Set up environment variables
+    * Open the .env file in the project folder
+    * Copy your application's Auth0 Domain into the `AUTH0_DOMAIN` field
+    * Copy your application's Client ID into the `AUTH0_CLIENT_ID` field
+    * Copy your application's Client Secret into the `AUTH0_CLIENT_SECRET` field
 
 # Running the App
-
-To run the sample, make sure you have `python3` and `pip` installed.
-
-Rename `.env.example` to `.env` and populate it with the client ID, domain, secret, callback URL and audience for your
-Auth0 app. If you are not implementing any API you can use `https://YOUR_DOMAIN.auth0.com/userinfo` as the audience.
-Also, add the callback URL to the settings section of your Auth0 client.
-
-Register `http://localhost:3000/callback` as `Allowed Callback URLs` and `http://localhost:3000`
-as `Allowed Logout URLs` in your client settings.
-
-Run `pip install -r requirements.txt` to install the dependencies and run `python server.py`.
-The app will be served at [http://localhost:3000/](http://localhost:3000/).
-
+7. Make sure you have `python3`, `pip` and the dependencies in `requirements.txt` installed
+8. If you have not done so, navigate into the project's directory from the terminal 
+`cd auth0-techtalk-python-flask-demo`
+9. Run `python server.py`
+10. Access the app at [http://localhost:3000/](http://localhost:3000/)
 
 ## What is Auth0?
 
@@ -48,6 +58,6 @@ enterprise identity systems like **Windows Azure AD, Google Apps, Active Directo
 2. Use Google, GitHub or Microsoft Account to login.
 
 ## References and Resources:
-1. [Auth0's 'Add login to your Python Flask app' quickstart] (https://auth0.com/docs/quickstart/webapp/python/interactive)
-2. [Auth0's collection of Quickstart tutorials] (https://auth0.com/docs/quickstarts)
-3. [Intro to OpenIDConnect] (https://auth0.com/resources/webinars/intro-openid-connect/thankyou)
+1. [Auth0's 'Add login to your Python Flask app' quickstart](https://auth0.com/docs/quickstart/webapp/python/interactive)
+2. [Auth0's collection of Quickstart tutorials](https://auth0.com/docs/quickstarts)
+3. [Intro to OpenIDConnect](https://auth0.com/resources/webinars/intro-openid-connect/thankyou)
