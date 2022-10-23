@@ -26,7 +26,7 @@ authenticated users
     * Copy `http://localhost:3000` into the `Allowed Logout URLs` textbox
 
 6. Set up environment variables
-    * Open the .env file in the project folder
+    * Create an `.env` file in your project directory following the format of `.env template`
     * Copy your application's Auth0 Domain into the `AUTH0_DOMAIN` field
     * Copy your application's Client ID into the `AUTH0_CLIENT_ID` field
     * Copy your application's Client Secret into the `AUTH0_CLIENT_SECRET` field

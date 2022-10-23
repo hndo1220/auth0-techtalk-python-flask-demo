@@ -1,0 +1,10 @@
+# Unique identifier for the client (aka this django web app)
+AUTH0_CLIENT_ID=
+
+# Password to authenticate the client before it can obtain an access token
+AUTH0_CLIENT_SECRET=
+
+# Base URL to to access Auth0's authentication API. With a paid Auth0 plan, can use
+# a custom domain so that 
+# https://auth0.com/docs/get-started/auth0-overview/create-tenants
+AUTH0_DOMAIN=
