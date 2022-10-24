@@ -1,4 +1,5 @@
-"""Python Flask WebApp Auth0 integration example
+"""
+Auth0 Tech Talk Python Flask Example
 """
 # Imports the necessary modules
 import json
@@ -11,15 +12,19 @@ from secrets import token_bytes
 from base64 import b64encode
 import random
 
+# List of comic images that /comic can display
 comics = [
     'https://images.macrumors.com/t/-piFJMm-RGSkqx0ii-6SclOem9k=/400x0/article-new/2021/06/nathan-pyle-comic-2.jpg?lossy',
     'https://pbs.twimg.com/media/DzPIR5pWoAIoAr9.jpg:large',
     'https://cdn-images.threadless.com/threadless-media/artist_shops/shops/nathanwpyle/products/1087280/shirt-1563559370-6d30316cb3d3cacbb1f5acb60a756356.png?v=3&d=eyJvbmx5X21ldGEiOiBmYWxzZSwgImZvcmNlIjogZmFsc2UsICJvcHMiOiBbWyJ0cmltIiwgW2ZhbHNlLCBmYWxzZV0sIHt9XSwgWyJyZXNpemUiLCBbXSwgeyJ3aWR0aCI6IDk5Ni4wLCAiYWxsb3dfdXAiOiBmYWxzZSwgImhlaWdodCI6IDk5Ni4wfV0sIFsiY2FudmFzX2NlbnRlcmVkIiwgWzEyMDAsIDEyMDBdLCB7ImJhY2tncm91bmQiOiAiZmZmZmZmIn1dLCBbInJlc2l6ZSIsIFs4MDBdLCB7fV0sIFsiY2FudmFzX2NlbnRlcmVkIiwgWzgwMCwgODAwLCAiI2ZmZmZmZiJdLCB7fV0sIFsiZW5jb2RlIiwgWyJqcGciLCA4NV0sIHt9XV19',
     'https://images.squarespace-cdn.com/content/v1/5e746c6a3b9afb644bf2b580/1599059988924-OSRDUVNW6RKUYOS6CCEK/a1.png',
+    'https://pbs.twimg.com/media/Dz9nY_jWwAEJQtp.jpg:large',
+    'https://media.npr.org/assets/img/2019/12/12/imagine-pleasant-nonesense_custom-34cafb9feaaf590b0111a98033d8ddff361d215d-s800-c85.webp',
+    'https://media.npr.org/assets/img/2019/12/12/1cb8aa81-2e51-4403-b67b-eb4d4ef4f949_custom-007b0efc510ca464c56115b36d45f55b9a9f7219-s800-c85.webp',
     'https://cdn-images.threadless.com/threadless-media/artist_shops/shops/nathanwpyle/products/978809/shirt-1554920343-214b8d695ff76938c20564b92839b88c.png?v=3&d=eyJvbmx5X21ldGEiOiBmYWxzZSwgImZvcmNlIjogZmFsc2UsICJvcHMiOiBbWyJ0cmltIiwgW2ZhbHNlLCBmYWxzZV0sIHt9XSwgWyJyZXNpemUiLCBbXSwgeyJ3aWR0aCI6IDk5Ni4wLCAiYWxsb3dfdXAiOiBmYWxzZSwgImhlaWdodCI6IDk5Ni4wfV0sIFsiY2FudmFzX2NlbnRlcmVkIiwgWzEyMDAsIDEyMDBdLCB7ImJhY2tncm91bmQiOiAiN2VhOGQ2In1dLCBbInJlc2l6ZSIsIFs4MDBdLCB7fV0sIFsiY2FudmFzX2NlbnRlcmVkIiwgWzgwMCwgODAwLCAiI2ZmZmZmZiJdLCB7fV0sIFsiZW5jb2RlIiwgWyJqcGciLCA4NV0sIHt9XV19'
 ]
 
-
+# Load environment variables
 ENV_FILE = find_dotenv()    # search for a .env file
 if ENV_FILE:
     load_dotenv(ENV_FILE)   # load environment variables
@@ -44,7 +49,7 @@ oauth.register(
     client_id=env.get("AUTH0_CLIENT_ID"),       
     client_secret=env.get("AUTH0_CLIENT_SECRET"),
     client_kwargs={
-        "scope": "openid profile email read:appointments",
+        "scope": "openid profile email",
     },
     server_metadata_url=f'https://{env.get("AUTH0_DOMAIN")}/.well-known/openid-configuration',
 )
@@ -60,16 +65,15 @@ def home():
     # https://flask.palletsprojects.com/en/2.2.x/api/#flask.render_template
     # template_name_or_list = name of template
     # session and pretty are variables to be made available in the template
-    user_session = session.get("user")
-    some_json = json.dumps(session.get("user"), indent=4)
-    user_session_object = json.loads(some_json)
-    print("Args passed to render_template():")
-    print("session = {}".format(user_session))
-    print("pretty = {}".format(some_json))
+    session_information = session.get("user")
+    session_information_as_json = json.dumps(session.get("user"), indent=4)
+    # print("Args passed to render_template():")
+    # print("session = {}".format(session_information))
+    # print("pretty = {}".format(session_information_as_json))
     return render_template(
         template_name_or_list = "home.html",
-        session=user_session,
-        pretty=some_json,
+        session=session_information,
+        pretty=session_information_as_json,
     )
 
 @app.route("/comic")

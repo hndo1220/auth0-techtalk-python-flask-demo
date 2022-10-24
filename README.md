@@ -61,3 +61,4 @@ enterprise identity systems like **Windows Azure AD, Google Apps, Active Directo
 1. [Auth0's 'Add login to your Python Flask app' quickstart](https://auth0.com/docs/quickstart/webapp/python/interactive)
 2. [Auth0's collection of Quickstart tutorials](https://auth0.com/docs/quickstarts)
 3. [Intro to OpenIDConnect](https://auth0.com/resources/webinars/intro-openid-connect/thankyou)
+4. [https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc](https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc)
