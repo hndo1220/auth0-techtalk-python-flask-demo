@@ -4,13 +4,13 @@ This sample demonstrates how to create a simple Python web app that shows comics
 authenticated users
 
 # Set-up
-1. Make sure you have `python3` and `pip` installed
-2. Run `pip install -r requirements.txt` to install the dependencies
-3. Clone this git repository and navigate into it
+1. Clone this git repository and navigate into it
 ```
     git clone https://github.com/hndo1220/auth0-techtalk-python-flask-demo.git
     cd auth0-techtalk-python-flask-demo
 ```
+2. Make sure you have `python3` and `pip` installed
+3. Run `pip install -r requirements.txt` to install the dependencies
 4. Create an account
     * Go to [Auth0](https://auth0.com) and click Sign Up.
     * Use Google, GitHub or Microsoft Account to login.

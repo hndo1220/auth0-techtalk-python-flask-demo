@@ -67,6 +67,10 @@ def home():
     # session and pretty are variables to be made available in the template
     session_information = session.get("user")
     session_information_as_json = json.dumps(session.get("user"), indent=4)
+    # print("Session  = {}".format(session))
+    # print("type(session)  = {}".format(type(session)))
+    print("session.keys  = {}".format(session.keys()))
+    # print("type(session)  = {}".format(type(session)))
     # print("Args passed to render_template():")
     # print("session = {}".format(session_information))
     # print("pretty = {}".format(session_information_as_json))
