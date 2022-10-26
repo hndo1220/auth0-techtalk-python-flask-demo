@@ -11,11 +11,12 @@ authenticated users
 ```
 2. Make sure you have `python3` and `pip` installed
 3. Run `pip install -r requirements.txt` to install the dependencies
-4. Create an account
+4. Run `pip install Authlib` to install the authlib library if it wasn't installed through requirements.txt
+5. Create an account
     * Go to [Auth0](https://auth0.com) and click Sign Up.
     * Use Google, GitHub or Microsoft Account to login.
 
-5. Register and configure the Web App on Auth0
+6. Register and configure the Web App on Auth0
     * Navigate to your Auth0 Dashboard
     * Click Create Application
     * Set Application Name (ex: 'Auth0 Tech Talk Python Flask Demo')
@@ -25,18 +26,18 @@ authenticated users
     * Copy `http://localhost:3000/callback` into the `Allowed Callback URLs` textbox
     * Copy `http://localhost:3000` into the `Allowed Logout URLs` textbox
 
-6. Set up environment variables
+7. Set up environment variables
     * Create an `.env` file in your project directory following the format of `.env template`
     * Copy your application's Auth0 Domain into the `AUTH0_DOMAIN` field
     * Copy your application's Client ID into the `AUTH0_CLIENT_ID` field
     * Copy your application's Client Secret into the `AUTH0_CLIENT_SECRET` field
 
 # Running the App
-7. Make sure you have `python3`, `pip` and the dependencies in `requirements.txt` installed
-8. If you have not done so, navigate into the project's directory from the terminal 
+8. Make sure you have `python3`, `pip` and the dependencies in `requirements.txt` installed
+9. If you have not done so, navigate into the project's directory from the terminal 
 `cd auth0-techtalk-python-flask-demo`
-9. Run `python server.py`
-10. Access the app at [http://localhost:3000/](http://localhost:3000/)
+10. Run `python server.py`
+11. Access the app at [http://localhost:3000/](http://localhost:3000/)
 
 ## What is Auth0?
 
